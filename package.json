@@ -16,8 +16,16 @@
 		"type": "individual",
 		"url": "https://github.com/sponsors/neoncitylights"
 	},
-	"main": "./dist/bundle.js",
+	"type": "module",
+	"main": "./dist/html-walker.umd.js",
+	"module": "./dist/html-walker.es.js",
 	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/html-walker.es.js",
+			"require": "./dist/html-walker.umd.js"
+		}
+	},
 	"files": [
 		"dist"
 	],
