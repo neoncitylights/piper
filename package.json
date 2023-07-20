@@ -44,13 +44,13 @@
 		"postversion": "git push && git push --tags"
 	},
 	"devDependencies": {
-		"@typescript-eslint/eslint-plugin": "5.43.0",
-		"@typescript-eslint/parser": "5.43.0",
+		"@typescript-eslint/eslint-plugin": "6.1.0",
+		"@typescript-eslint/parser": "6.1.0",
 		"@vitest/ui": "^0.33.0",
-		"eslint": "8.27.0",
+		"eslint": "8.45.0",
 		"gh-pages": "4.0.0",
-		"typedoc": "0.23.21",
-		"typescript": "4.9.3",
+		"typedoc": "0.24.8",
+		"typescript": "5.1.6",
 		"vite": "^4.4.4",
 		"vite-plugin-dts": "^3.3.1",
 		"vitest": "^0.33.0"
