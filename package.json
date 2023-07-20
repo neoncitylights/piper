@@ -7,10 +7,10 @@
 		"name": "Samantha",
 		"url": "https://github.com/neoncitylights"
 	},
-	"bugs": "https://github.com/neoncitylights/ts-html-walker/issues",
+	"bugs": "https://github.com/wandering-app/html-walker/issues",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/neoncitylights/ts-html-walker.git"
+		"url": "git+https://github.com/wandering-app/html-walker.git"
 	},
 	"funding": {
 		"type": "individual",
