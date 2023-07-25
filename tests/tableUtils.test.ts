@@ -1,6 +1,6 @@
+import { v4 as uuidv4 } from 'uuid';
 import { describe, expect, test } from 'vitest';
-import { getClosestParentTableElement, getTableCaption, isTableRelatedElement } from '../src';
-
+import { HTMLTableRelatedElement, getClosestParentTableElement, getTableCaption, isTableRelatedElement } from '../src';
 
 const expectTableRelatedElement = (elementName: string, truthy: boolean = true) => {
 	const element = document.createElement(elementName);
@@ -125,17 +125,58 @@ describe('getTableCaption()', () => {
 });
 
 
+const expectClosestParentTable = <T extends HTMLTableRelatedElement>(
+	childElementName: string,
+	appendFn?: ((table: HTMLTableElement, child: T) => void)|undefined,
+	truthy: boolean = true,
+) => {
+	const generatedId = uuidv4();
+	const table = document.createElement('table');
+	table.setAttribute('id', generatedId);
+
+	const child = document.createElement(childElementName) as T;
+	if(appendFn === undefined) {
+		table.append(child);
+	} else {
+		appendFn(table, child);
+	}
+
+	const closestTable = getClosestParentTableElement(child);
+
+	if (truthy) {
+		expect(closestTable?.tagName).toBe('TABLE');
+		expect(closestTable?.getAttribute('id')).toBe(generatedId);
+	} else {
+		expect(closestTable?.tagName).not.toBe('TABLE');
+		expect(closestTable?.getAttribute('id')).not.toBe(generatedId);
+	}
+};
+
 describe('getClosestParentTableElement()', () => {
-	describe('finds table from', () => {
+	describe('given', () => {
 		test('<table> (root element)', () => {
 			const table = document.createElement('table');
 			expect(getClosestParentTableElement(table)).toBeTruthy();
 		});
 
-		// test('<caption>', () => {});
-		// test('<colgroup>', () => {});
-		// test('<thead>', () => {});
-		// test('<tbody>', () => {});
-		// test('<tfoot>', () => {});
+		test('<caption>', () => expectClosestParentTable('caption'));
+		test('<colgroup>', () => expectClosestParentTable('colgroup'));
+		test('<thead>', () => expectClosestParentTable('thead'));
+		test('<tbody>', () => expectClosestParentTable('tbody'));
+		test('<tfoot>', () => expectClosestParentTable('tfoot'));
+
+		describe('<col>', () => {
+			test('passes when under <colgroup>', () => {
+				expectClosestParentTable('col', (table, child) => {
+					const colgroup = document.createElement('colgroup');
+					table.append(colgroup);
+					colgroup.append(child);
+				});
+			});
+
+			test('fails when immediate child of <table>', () => {
+				expectClosestParentTable('col', undefined, false);
+			});
+		});
 	});
 });
