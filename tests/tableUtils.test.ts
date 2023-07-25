@@ -109,7 +109,6 @@ describe('getTableCaption()', () => {
 				const table = document.createElement('table');
 				table.setAttribute('id', 'my-cool-table');
 				document.body.append(table);
-
 				
 				expect(getTableCaption(table)).toBe('Boo!');
 			});
