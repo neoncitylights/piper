@@ -1,10 +1,10 @@
 import { v4 as uuidv4 } from 'uuid';
 import { describe, expect, test } from 'vitest';
-import { HTMLTableRelatedElement, getClosestParentTableElement, getTableCaption, isTableRelatedElement } from '../src';
+import { HTMLTableLikeElement, getClosestParentTable, getTableCaption, isTableLikeElement } from '../src';
 
 const expectTableRelatedElement = (elementName: string, truthy: boolean = true) => {
 	const element = document.createElement(elementName);
-	const expectation = expect(isTableRelatedElement(element));
+	const expectation = expect(isTableLikeElement(element));
 	
 	if (truthy) {
 		expectation.toBeTruthy();
@@ -19,7 +19,7 @@ describe('isTableRelatedElement()', () => {
 		test('<caption>', () => expectTableRelatedElement('caption'));
 
 		describe('table section element (HTMLTableSectionElement)', () => {
-			test('<thead>', () => expectTableRelatedElement('thead'));
+			test('<thead>', () => expectTableRelatedElement('theads'));
 			test('<tbody>', () => expectTableRelatedElement('tbody'));
 			test('<tfoot>', () => expectTableRelatedElement('tfoot'));
 		});
@@ -124,7 +124,7 @@ describe('getTableCaption()', () => {
 });
 
 
-const expectClosestParentTable = <T extends HTMLTableRelatedElement>(
+const expectClosestParentTable = <T extends HTMLTableLikeElement>(
 	childElementName: string,
 	appendFn?: ((table: HTMLTableElement, child: T) => void)|undefined,
 	truthy: boolean = true,
@@ -140,7 +140,7 @@ const expectClosestParentTable = <T extends HTMLTableRelatedElement>(
 		appendFn(table, child);
 	}
 
-	const closestTable = getClosestParentTableElement(child);
+	const closestTable = getClosestParentTable(child);
 
 	if (truthy) {
 		expect(closestTable?.tagName).toBe('TABLE');
@@ -155,7 +155,7 @@ describe('getClosestParentTableElement()', () => {
 	describe('given', () => {
 		test('<table> (root element)', () => {
 			const table = document.createElement('table');
-			expect(getClosestParentTableElement(table)).toBeTruthy();
+			expect(getClosestParentTable(table)).toBeTruthy();
 		});
 
 		test('<caption>', () => expectClosestParentTable('caption'));

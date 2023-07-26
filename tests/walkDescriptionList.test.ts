@@ -35,6 +35,24 @@ describe('walkDescriptionList()', () => {
 			['Cow', 'moo'],
 		]));
 	});
+
+	test('returns an empty Map when the description list is empty', () => {
+		const dList = document.createElement('dl');
+		const walked = walkDescriptionList(dList,
+			(term) => term.textContent ?? '',
+			(details) => details.textContent ?? '');
+		
+		expect(walked).toEqual(new Map<string, string>([]));
+	});
+
+	test('throws error on invalid description list', () => {
+		const dList = document.createElement('dl');
+		dList.append(document.createElement('span'));
+
+		expect(() => walkDescriptionList(dList,
+			(term) => term.textContent ?? '',
+			(details) => details.textContent ?? '')).toThrowError();
+	});
 });
 
 
