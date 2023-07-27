@@ -42,8 +42,8 @@ import { walkDescriptionList, walkTable } from '@neoncitylights/html-walker';
 let descListElement = document.querySelector('dl#my-description-list') as HTMLDListElement;
 let descList = walkDescriptionList(
 	descListElement,
-	(term) => term.textContent,
-	(details) => details.textContent);
+	(term) => term.textContent ?? '',
+	(details) => details.textContent ?? '');
 
 // walking through a table
 let timezonesTable = document.querySelector('table') as HTMLTableElement;
@@ -82,8 +82,8 @@ import { walkDescriptionList } from '@neoncitylights/html-walker';
 
 const prefsElement = document.getElementById('prefs') as HTMLDListElement;
 const prefs = walkDescriptionList(prefsElement,
-	(term) => term.textContent,
-	(details) => details.textContent);
+	(term) => term.textContent ?? '',
+	(details) => details.textContent ?? '');
 ```
 
 ```json
