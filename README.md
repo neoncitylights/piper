@@ -1,18 +1,18 @@
-# @neoncitylights/html-walker
+# @neoncitylights/piper
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![npm (scoped)](https://img.shields.io/npm/v/@neoncitylights/html-walker)](https://www.npmjs.com/package/@neoncitylights/html-walker)
-[![GitHub deployments](https://img.shields.io/github/deployments/wandering-app/html-walker/github-pages?label=deploy)](https://github.com/wandering-app/html-walker/deployments/activity_log?environment=github-pages)
-[![Node.js workflow](https://github.com/wandering-app/html-walker/actions/workflows/main.yml/badge.svg)](https://github.com/wandering-app/html-walker/actions/workflows/main.yml)
+[![npm (scoped)](https://img.shields.io/npm/v/@neoncitylights/piper)](https://www.npmjs.com/package/@neoncitylights/piper)
+[![GitHub deployments](https://img.shields.io/github/deployments/wandering-app/piper/github-pages?label=deploy)](https://github.com/wandering-app/piper/deployments/activity_log?environment=github-pages)
+[![Node.js workflow](https://github.com/wandering-app/piper/actions/workflows/main.yml/badge.svg)](https://github.com/wandering-app/piper/actions/workflows/main.yml)
 
 This library provides some utilities for walking through specific HTML elements and turning into machine-readable data.
 
 ## Install
 ```
-npm install @neoncitylights/html-walker
+npm install @neoncitylights/piper
 ```
 
 ## Documentation
-[Auto-generated API documentation is available](https://neoncitylights.github.io/ts-html-walker/).
+[Auto-generated API documentation is available](https://neoncitylights.github.io/ts-piper/).
 
 ### API Reference
 #### Walker functions
@@ -36,7 +36,7 @@ npm install @neoncitylights/html-walker
 
 ## Usage
 ```ts
-import { walkDescriptionList, walkTable } from '@neoncitylights/html-walker';
+import { walkDescriptionList, walkTable } from '@neoncitylights/piper';
 
 // walking through a description list
 let descListElement = document.querySelector('dl#my-description-list') as HTMLDListElement;
@@ -78,7 +78,7 @@ let timezones = walkTable(timezonesTable);
 ```
 
 ```ts
-import { walkDescriptionList } from '@neoncitylights/html-walker';
+import { walkDescriptionList } from '@neoncitylights/piper';
 
 const prefsElement = document.getElementById('prefs') as HTMLDListElement;
 const prefs = walkDescriptionList(prefsElement,
@@ -135,7 +135,7 @@ const prefs = walkDescriptionList(prefsElement,
 ```
 
 ```ts
-import { walkTable } from '@neoncitylights/html-walker';
+import { walkTable } from '@neoncitylights/piper';
 
 let timezoneTableElement = document.getElementById('timezone-examples') as HTMLTableElement;
 let timezoneExamples = walkTable(timezoneTableElement);

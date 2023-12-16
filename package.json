@@ -1,5 +1,5 @@
 {
-	"name": "@neoncitylights/html-walker",
+	"name": "@neoncitylights/piper",
 	"version": "0.0.0",
 	"description": "TypeScript library to make walking through the DOM easier",
 	"license": "MIT",
@@ -7,23 +7,23 @@
 		"name": "Samantha",
 		"url": "https://github.com/neoncitylights"
 	},
-	"bugs": "https://github.com/wandering-app/html-walker/issues",
+	"bugs": "https://github.com/wandering-app/piper/issues",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/wandering-app/html-walker.git"
+		"url": "git+https://github.com/wandering-app/piper.git"
 	},
 	"funding": {
 		"type": "individual",
 		"url": "https://github.com/sponsors/neoncitylights"
 	},
 	"type": "module",
-	"main": "./dist/html-walker.umd.js",
-	"module": "./dist/html-walker.es.js",
+	"main": "./dist/piper.umd.js",
+	"module": "./dist/piper.es.js",
 	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
-			"import": "./dist/html-walker.es.js",
-			"require": "./dist/html-walker.umd.js"
+			"import": "./dist/piper.es.js",
+			"require": "./dist/piper.umd.js"
 		}
 	},
 	"files": [
