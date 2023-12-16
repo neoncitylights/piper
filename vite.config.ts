@@ -6,8 +6,8 @@ export default defineConfig({
 	build: {
 		lib: {
 			entry: path.resolve(__dirname, 'src/index.ts'),
-			name: 'html-walker',
-			fileName: (format) => `html-walker.${format}.js`,
+			name: 'piper',
+			fileName: (format) => `piper.${format}.js`,
 		},
 	},
 	plugins: [
