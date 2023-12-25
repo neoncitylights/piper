@@ -19,7 +19,7 @@ describe('isTableRelatedElement()', () => {
 		test('<caption>', () => expectTableRelatedElement('caption'));
 
 		describe('table section element (HTMLTableSectionElement)', () => {
-			test('<thead>', () => expectTableRelatedElement('theads'));
+			test('<thead>', () => expectTableRelatedElement('thead'));
 			test('<tbody>', () => expectTableRelatedElement('tbody'));
 			test('<tfoot>', () => expectTableRelatedElement('tfoot'));
 		});
