@@ -17,21 +17,17 @@
 		"url": "https://github.com/sponsors/neoncitylights"
 	},
 	"type": "module",
-	"main": "./dist/piper.umd.js",
-	"module": "./dist/piper.es.js",
 	"types": "./dist/index.d.ts",
+	"module": "./dist/piper.mjs",
 	"exports": {
 		".": {
-			"import": "./dist/piper.es.js",
-			"require": "./dist/piper.umd.js"
+			"types": "./dist/index.d.ts",
+			"import": "./dist/piper.mjs"
 		}
 	},
 	"files": [
 		"dist"
 	],
-	"directories": {
-		"test": "tests"
-	},
 	"scripts": {
 		"build": "vite build",
 		"build:typedoc": "npx typedoc",
@@ -43,8 +39,13 @@
 		"test:ui": "npm run test -- --ui",
 		"test:watch": "npm run test -- --watch",
 		"test:all": "npm run test:ci && npm run lint",
-		"lint": "eslint src --ext .ts,.tsx",
-		"lint:fix": "eslint --fix src --ext .ts,.tsx",
+		"lint": "npm run lint:es",
+		"lint:fix": "npm run lint:es-fix",
+		"lint:es": "eslint src --ext .ts,.tsx",
+		"lint:es-fix": "eslint --fix src --ext .ts,.tsx",
+		"prelint:pub": "npm run build",
+		"lint:pub": "publint .",
+		"lint:pub-env": "publint --version",
 		"prepare": "npm run build",
 		"prepublishOnly": "npm run lint",
 		"preversion": "npm run lint",
@@ -59,6 +60,7 @@
 		"eslint": "8.55.0",
 		"gh-pages": "6.1.0",
 		"jsdom": "^22.1.0",
+		"publint": "^0.2.7",
 		"typedoc": "0.25.4",
 		"typescript": "5.3.2",
 		"vite": "^5.0.4",
