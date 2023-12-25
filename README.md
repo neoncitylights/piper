@@ -28,11 +28,11 @@ npm install @neoncitylights/piper
  * `fn`: <a href="#collectTableRows">#</a> walkTable.**collectTableRows**(*table*): [*TableRow*](src/walkTable.ts) • [source](./src/walkTable.ts)
 
 #### Table utilities
- * `T`: <a href="#HTMLTableRelatedElement">#</a> tableUtils.**HTMLTableRelatedElement** • [source](./src/tableUtils.ts)
- * `fn`: <a href="#isTableRelatedElement">#</a> tableUtils.**isTableRelatedElement**(*element*): *element* is *HTMLTableRelatedElement* • [source](./src/tableUtils.ts)
+ * `T`: <a href="#HTMLTableLikeElement">#</a> tableUtils.**HTMLTableLikeElement** • [source](./src/tableUtils.ts)
+ * `fn`: <a href="#isTableLikeElement">#</a> tableUtils.**isTableLikeElement**(*element*): *element* is *HTMLTableRelatedElement* • [source](./src/tableUtils.ts)
  * `fn`: <a href="#getTableCaption">#</a> tableUtils.**getTableCaption**(*table*): *string* • [source](./src/tableUtils.ts)
- * `fn`: <a href="#getClosestParentTableElement">#</a> tableUtils.**getClosestParentTableElement**(*element*): *HTMLTableElement*|*undefiend* • [source](./src/tableUtils.ts)
- * `fn`: <a href="#getClosestParentTableElementFromRow">#</a> tableUtils.**getClosestParentTableElementFromRow**(*row*): *HTMLTableElement* • [source](./src/tableUtils.ts)
+ * `fn`: <a href="#getClosestParentTable">#</a> tableUtils.**getClosestParentTable**(*element*): *HTMLTableElement*|*undefiend* • [source](./src/tableUtils.ts)
+ * `fn`: <a href="#getClosestParentTableByRow">#</a> tableUtils.**getClosestParentTableByRow**(*row*): *HTMLTableElement* • [source](./src/tableUtils.ts)
 
 ## Usage
 ```ts
@@ -42,8 +42,8 @@ import { walkDescriptionList, walkTable } from '@neoncitylights/piper';
 let descListElement = document.querySelector('dl#my-description-list') as HTMLDListElement;
 let descList = walkDescriptionList(
 	descListElement,
-	(term) => term.textContent,
-	(details) => details.textContent);
+	(term) => term.textContent ?? '',
+	(details) => details.textContent ?? '');
 
 // walking through a table
 let timezonesTable = document.querySelector('table') as HTMLTableElement;
@@ -82,8 +82,8 @@ import { walkDescriptionList } from '@neoncitylights/piper';
 
 const prefsElement = document.getElementById('prefs') as HTMLDListElement;
 const prefs = walkDescriptionList(prefsElement,
-	(term) => term.textContent,
-	(details) => details.textContent);
+	(term) => term.textContent ?? '',
+	(details) => details.textContent ?? '');
 ```
 
 ```json

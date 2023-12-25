@@ -57,6 +57,8 @@
 		"postversion": "git push && git push --tags"
 	},
 	"devDependencies": {
+		"@testing-library/dom": "^9.3.1",
+		"@types/uuid": "^9.0.2",
 		"@vitest/coverage-v8": "^1.1.0",
 		"@vitest/ui": "^1.1.0",
 		"eslint": "8.55.0",
@@ -68,6 +70,7 @@
 		"publint": "^0.2.7",
 		"typedoc": "0.25.4",
 		"typescript": "5.3.2",
+		"uuid": "^9.0.1",
 		"vite": "^5.0.10",
 		"vite-plugin-dts": "^3.3.1",
 		"vitest": "^1.1.0"

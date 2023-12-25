@@ -1,7 +1,7 @@
-export const ELEMENT_NAME_DIV = 'DIV';
-export const ELEMENT_NAME_DT = 'DT';
-export const ELEMENT_NAME_DD = 'DD';
-export type DListCallback<T> = (element: HTMLElement) => T;
+const ELEMENT_NAME_DIV = 'DIV';
+const ELEMENT_NAME_DT = 'DT';
+const ELEMENT_NAME_DD = 'DD';
+export type DListFn<T> = (element: HTMLElement) => T;
 
 /**
  * Extracts data from a description list into a map of key-value pairs,
@@ -12,28 +12,29 @@ export type DListCallback<T> = (element: HTMLElement) => T;
  * @see https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element
  */
 export function walkDescriptionList<K,V>(
-	element: HTMLDListElement|HTMLDivElement,
-	termCallback: DListCallback<K>,
-	detailsCallback: DListCallback<V>,
+	dList: HTMLDListElement|HTMLDivElement,
+	termFn: DListFn<K>,
+	detailsFn: DListFn<V>,
 ): Map<K, V> {
-	const children: HTMLCollection = element.children;
+	const children: HTMLCollection = dList.children;
 	if (children.length === 0) {
 		return new Map<K, V>();
 	}
 
 	let descriptionList = new Map<K, V>();
 	let terms: K[] = [];
-	for (const currentElement of children) {
-		const elementTagName = currentElement.tagName;
+
+	for (const child of children) {
+		const elementTagName = child.tagName;
 		switch (elementTagName) {
 		case ELEMENT_NAME_DT:
-			terms.push(termCallback(currentElement as HTMLElement));
+			terms.push(termFn(child as HTMLElement));
 			break;
 		case ELEMENT_NAME_DD:
-			if (currentElement.previousElementSibling?.tagName === ELEMENT_NAME_DT) {
+			if (child.previousElementSibling?.tagName === ELEMENT_NAME_DT) {
 				terms.forEach(term => descriptionList.set(
 					term,
-					detailsCallback(currentElement as HTMLElement),
+					detailsFn(child as HTMLElement),
 				));
 				terms = [];
 			}
@@ -42,9 +43,9 @@ export function walkDescriptionList<K,V>(
 			descriptionList = new Map([
 				...descriptionList.entries(),
 				...walkDescriptionList(
-					currentElement as HTMLDivElement,
-					termCallback,
-					detailsCallback,
+					child as HTMLDivElement,
+					termFn,
+					detailsFn,
 				),
 			]);
 			break;
