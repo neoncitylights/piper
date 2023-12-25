@@ -43,6 +43,7 @@
 		"lint:fix": "npm run lint:es-fix",
 		"lint:es": "eslint src --ext .ts,.tsx",
 		"lint:es-fix": "eslint --fix src --ext .ts,.tsx",
+		"lint:es-env": "eslint --env-info",
 		"prelint:pub": "npm run build",
 		"lint:pub": "publint .",
 		"lint:pub-env": "publint --version",

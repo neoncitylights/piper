@@ -46,12 +46,6 @@ jobs:
             npm-cmd-suffix: es
             npm-cmd-env: |
               npm run lint:es-env
-          - tool: Markdownlint
-            npm-cmd-suffix: md
-            npm-cmd-env: |
-              node --version
-              npm --version
-              npm run lint:md-env
           - tool: publint
             npm-cmd-suffix: pub
             npm-cmd-env: |
