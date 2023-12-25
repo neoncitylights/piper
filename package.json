@@ -64,7 +64,7 @@
 		"eslint": "8.55.0",
 		"eslint-config-neoncitylights": "^0.3.0",
 		"gh-pages": "6.1.0",
-		"jsdom": "^22.1.0",
+		"jsdom": "^23.0.1",
 		"markdownlint-cli2": "^0.11.0",
 		"markdownlint-config-neoncitylights": "^0.3.0",
 		"publint": "^0.2.7",
