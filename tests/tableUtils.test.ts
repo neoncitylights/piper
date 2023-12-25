@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import { describe, expect, test } from 'vitest';
-import { HTMLTableLikeElement, getClosestParentTable, getTableCaption, isTableLikeElement } from '../src';
+
+import { getClosestParentTable, getTableCaption, HTMLTableLikeElement, isTableLikeElement } from '../src';
 
 const expectTableRelatedElement = (elementName: string, truthy: boolean = true) => {
 	const element = document.createElement(elementName);
