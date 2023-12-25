@@ -1,8 +1,8 @@
 # @neoncitylights/piper
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![npm (scoped)](https://img.shields.io/npm/v/@neoncitylights/piper)](https://www.npmjs.com/package/@neoncitylights/piper)
-[![GitHub deployments](https://img.shields.io/github/deployments/wandering-app/piper/github-pages?label=deploy)](https://github.com/wandering-app/piper/deployments/activity_log?environment=github-pages)
-[![Node.js workflow](https://github.com/wandering-app/piper/actions/workflows/main.yml/badge.svg)](https://github.com/wandering-app/piper/actions/workflows/main.yml)
+[![GitHub deployments](https://img.shields.io/github/deployments/neoncitylights/piper/github-pages?label=deploy)](https://github.com/neoncitylights/piper/deployments/activity_log?environment=github-pages)
+[![Node.js workflow](https://github.com/neoncitylights/piper/actions/workflows/main.yml/badge.svg)](https://github.com/neoncitylights/piper/actions/workflows/main.yml)
 
 This library provides some utilities for walking through specific HTML elements and turning into machine-readable data.
 

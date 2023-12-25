@@ -7,10 +7,10 @@
 		"name": "Samantha",
 		"url": "https://github.com/neoncitylights"
 	},
-	"bugs": "https://github.com/wandering-app/piper/issues",
+	"bugs": "https://github.com/neoncitylights/piper/issues",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/wandering-app/piper.git"
+		"url": "git+https://github.com/neoncitylights/piper.git"
 	},
 	"funding": {
 		"type": "individual",
