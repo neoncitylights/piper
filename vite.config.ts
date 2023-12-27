@@ -1,7 +1,7 @@
 import path from 'node:path';
 
-import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
 	build: {
@@ -14,4 +14,11 @@ export default defineConfig({
 	plugins: [
 		dts(),
 	],
+	test: {
+		coverage: {
+			provider: 'v8',
+			reporter: [ 'text', 'json', 'html' ],
+		},
+		environment: 'jsdom',
+	},
 });
