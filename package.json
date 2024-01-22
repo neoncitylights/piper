@@ -59,8 +59,8 @@
 		"@testing-library/dom": "^9.3.4",
 		"@types/node": "^20.11.3",
 		"@types/uuid": "^9.0.2",
-		"@vitest/coverage-v8": "^1.2.0",
-		"@vitest/ui": "^1.2.0",
+		"@vitest/coverage-v8": "^1.2.1",
+		"@vitest/ui": "^1.2.1",
 		"eslint": "8.56.0",
 		"eslint-config-neoncitylights": "^0.3.0",
 		"jsdom": "^23.2.0",
@@ -72,6 +72,6 @@
 		"uuid": "^9.0.1",
 		"vite": "^5.0.12",
 		"vite-plugin-dts": "^3.7.1",
-		"vitest": "^1.2.0"
+		"vitest": "^1.2.1"
 	}
 }
