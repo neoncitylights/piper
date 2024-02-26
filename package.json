@@ -61,7 +61,7 @@
 		"@types/uuid": "^9.0.2",
 		"@vitest/coverage-v8": "^1.2.1",
 		"@vitest/ui": "^1.2.1",
-		"eslint": "8.56.0",
+		"eslint": "8.57.0",
 		"eslint-config-neoncitylights": "^0.3.0",
 		"jsdom": "^24.0.0",
 		"markdownlint-cli2": "^0.12.1",
