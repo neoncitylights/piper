@@ -57,7 +57,7 @@
 	},
 	"devDependencies": {
 		"@testing-library/dom": "^9.3.4",
-		"@types/node": "^20.11.5",
+		"@types/node": "^20.11.20",
 		"@types/uuid": "^9.0.2",
 		"@vitest/coverage-v8": "^1.2.1",
 		"@vitest/ui": "^1.2.1",
@@ -67,7 +67,7 @@
 		"markdownlint-cli2": "^0.12.1",
 		"markdownlint-config-neoncitylights": "^0.3.0",
 		"publint": "^0.2.7",
-		"typedoc": "0.25.7",
+		"typedoc": "0.25.9",
 		"typescript": "5.3.3",
 		"uuid": "^9.0.1",
 		"vite": "^5.0.12",
